@@ -1,0 +1,15 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+body{background-color:#4b2a9b;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M24 18v12M18 24h12' stroke='%23ffffff' stroke-opacity='.07' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E");color:#fff;font-family:var(--font-cairo),sans-serif}
+@layer components{
+.panel{@apply bg-panel border-2 border-line rounded-[28px] p-5 shadow-[0_18px_50px_rgba(10,0,40,.45)]}
+.inset{@apply bg-inset rounded-2xl p-3 shadow-[inset_0_3px_8px_rgba(0,0,0,.35)]}
+.btn{@apply rounded-2xl px-5 py-3 font-black text-lg text-[#2a1259] transition-all duration-100 active:translate-y-[5px] active:shadow-none disabled:opacity-40 disabled:pointer-events-none focus-visible:outline outline-2 outline-white}
+.btn-y{@apply btn bg-sun shadow-[0_5px_0_#c79a00]}.btn-c{@apply btn bg-aqua shadow-[0_5px_0_#119a91]}
+.btn-r{@apply btn bg-coral text-white shadow-[0_5px_0_#b52a31]}
+.chip{@apply inset text-center font-bold cursor-pointer border-2 border-transparent transition hover:-translate-y-0.5}
+.chip[data-on=true]{@apply border-sun}
+.input{@apply inset w-full outline-none border-2 border-transparent focus:border-aqua font-bold text-center}
+}
+@keyframes pop{0%{transform:scale(.8)}60%{transform:scale(1.08)}100%{transform:scale(1)}}.pop{animation:pop .35s}
+@keyframes pulse2{50%{transform:scale(1.04)}}.idle{animation:pulse2 2s infinite}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
